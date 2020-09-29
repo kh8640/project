@@ -26,8 +26,15 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
   {
+    navbarMenu.classList.remove;
     scrollIntoView(link);
   }
+});
+
+// 메뉴
+const navtogle = document.querySelector(".navbar__togle-btn");
+document.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // 컨택
@@ -43,7 +50,7 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homehight;
 });
 
-// 위로보내기 가끔 두번 눌러야 위로감
+// 위로보내기 (가끔 두번 눌러야 위로감)
 const up = document.querySelector(".up");
 document.addEventListener("scroll", () => {
   if (window.scrollY > homehight) {
@@ -58,6 +65,7 @@ up.addEventListener("click", () => {
 });
 
 // 프로젝트 버튼 누르면 갯수별로 나오게
+const activebtn = document.querySelector(".category__btn.selected");
 const workbtn = document.querySelector(".work__categories");
 const workpro = document.querySelector(".work__projects");
 const project = document.querySelectorAll(".project__img__all");
