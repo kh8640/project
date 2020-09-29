@@ -56,3 +56,25 @@ document.addEventListener("scroll", () => {
 up.addEventListener("click", () => {
   scrollIntoView("#home");
 });
+
+// 프로젝트 버튼 누르면 갯수별로 나오게
+const workbtn = document.querySelector(".work__categories");
+const workpro = document.querySelector(".work__projects");
+const project = document.querySelectorAll(".project__img__all");
+workbtn.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  workpro.classList.add("ani");
+  setTimeout(() => {
+    project.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    workpro.classList.remove("ani");
+  }, 300);
+});

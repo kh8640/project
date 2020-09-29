@@ -359,6 +359,16 @@ p {
   justify-content: center;
 }
 
+.work__projects {
+  opacity: 1;
+  transition: all var(--anmimation-duration) ease-out;
+}
+
+.work__projects.ani {
+  opacity: 0.6;
+  transform: scale(0.9) translateY(30px);
+}
+
 .work__projects > ul > li {
   display: inline-block;
   position: relative;
@@ -368,6 +378,10 @@ p {
   color: #fff;
   background-color: var(--color-dark-grey);
   overflow: hidden;
+}
+
+.project__img__all.invisible {
+  display: none;
 }
 
 .project__img {
