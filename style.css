@@ -1,5 +1,17 @@
 /* Global */
 
+button {
+  background-color: transparent;
+
+  cursor: pointer;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0;
+}
+
 :root {
   /* Color */
   --color-white: #ffffff;
@@ -323,6 +335,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -333,7 +346,7 @@ p {
 .category__btn.selected .catgory__count,
 .category__btn:hover .catgory__count {
   opacity: 1;
-  top: 0;
+  top: 6px;
 }
 
 .catgory__count {
@@ -344,9 +357,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 8px;
   opacity: 0;
   transition: all var(--anmimation-duration) ease;
 }
@@ -469,13 +482,13 @@ p {
   width: 100%;
 }
 
-.testimonial__avatar:nth-child(odd) {
+/* .testimonial__avatar:nth-child(odd) {
   margin-right: 40px;
 }
 
 .testimonial__avatar:nth-child(even) {
   margin-left: 40px;
-}
+} */
 
 .testimonial__speech-bubble p {
   color: var(--color-grey);
@@ -544,6 +557,14 @@ p {
 }
 
 @media screen and (max-width: 765px) {
+  :root {
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__togle-btn {
     display: block;
   }
@@ -568,12 +589,19 @@ p {
     display: none;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
@@ -585,11 +613,41 @@ p {
   }
 
   .testimonial__avatar {
-    min-width: 100px;
-    height: 100px;
+    min-width: 120px;
+    height: 120px;
+    width: 120px;
   }
 
-  .work__categories {
-    display: flex;
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials {
+    align-items: center;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .category__btn {
+    width: 160px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .up {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .navbar__togle-btn {
+    top: 16px;
+    right: 45px;
   }
 }

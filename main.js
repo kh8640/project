@@ -26,14 +26,14 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
   {
-    navbarMenu.classList.remove;
+    navbarMenu.classList.remove("open");
     scrollIntoView(link);
   }
 });
 
 // 메뉴
 const navtogle = document.querySelector(".navbar__togle-btn");
-document.addEventListener("click", () => {
+navtogle.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
 });
 
@@ -86,3 +86,5 @@ workbtn.addEventListener("click", (e) => {
     workpro.classList.remove("ani");
   }, 300);
 });
+
+// Final touch on button state💡 이부분 못함
